@@ -366,13 +366,12 @@ class _AvatarCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(
-        child: Text(
-          'VP',
-          style: AppTextStyles.heroName.copyWith(
-            fontSize: isMobile ? 48 : 90,
-            color: Colors.white,
-          ),
+      child: ClipOval(
+        child: Image.asset(
+          'assets/images/avatar.png',
+          width: size,
+          height: size,
+          fit: BoxFit.cover,
         ),
       ),
     )
