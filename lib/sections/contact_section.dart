@@ -12,9 +12,9 @@ import '../widgets/section_title.dart';
 
 // ── EmailJS credentials — fill these in after creating your EmailJS account ──
 // https://www.emailjs.com → Services, Templates, Account → Public Key
-const _kEmailJsServiceId  = 'service_7pt2jkd';
-const _kEmailJsTemplateId = 'template_3nd1t7n';
-const _kEmailJsPublicKey  = 'OGIMeEOdE9zFgR_iK';
+const _kEmailJsServiceId  = '';
+const _kEmailJsTemplateId = '';
+const _kEmailJsPublicKey  = '';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
