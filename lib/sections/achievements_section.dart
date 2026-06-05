@@ -53,6 +53,7 @@ class _EducationRow extends StatelessWidget {
           delay: Duration(milliseconds: 100 * i),
           child: SizedBox(
             width: isMobile ? double.infinity : 380,
+            height: 180,
             child: _EducationCard(data: PortfolioData.education[i]),
           ),
         );
@@ -80,6 +81,7 @@ class _EducationCardState extends State<_EducationCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 220),
         padding: const EdgeInsets.all(24),
+        clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           color: _hovered ? AppColors.surfaceAlt : AppColors.surface,
           borderRadius: BorderRadius.circular(16),
@@ -169,6 +171,7 @@ class _AchievementsRow extends StatelessWidget {
           delay: Duration(milliseconds: 150 * i),
           child: SizedBox(
             width: isMobile ? double.infinity : 380,
+            height: 180,
             child: _AchievementCard(data: PortfolioData.achievements[i]),
           ),
         );
@@ -207,6 +210,7 @@ class _AchievementCardState extends State<_AchievementCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 220),
         padding: const EdgeInsets.all(24),
+        clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           color: _hovered ? AppColors.surfaceAlt : AppColors.surface,
           borderRadius: BorderRadius.circular(16),

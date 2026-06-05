@@ -56,6 +56,7 @@ class _ProjectsGrid extends StatelessWidget {
               delay: Duration(milliseconds: 100 * i),
               child: SizedBox(
                 width: cardWidth,
+                height: 320,
                 child: _ProjectCard(project: PortfolioData.projects[i]),
               ),
             );
@@ -96,6 +97,7 @@ class _ProjectCardState extends State<_ProjectCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
         padding: const EdgeInsets.all(24),
+        clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           color: _hovered ? AppColors.surfaceAlt : AppColors.background,
           borderRadius: BorderRadius.circular(16),

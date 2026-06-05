@@ -55,6 +55,7 @@ class _SkillsGrid extends StatelessWidget {
               delay: Duration(milliseconds: 100 * i),
               child: SizedBox(
                 width: cardWidth,
+                height: 260,
                 child: _SkillCard(category: cat),
               ),
             );
@@ -108,6 +109,7 @@ class _SkillCardState extends State<_SkillCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
         padding: const EdgeInsets.all(24),
+        clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           color: _hovered ? AppColors.surfaceAlt : AppColors.background,
           borderRadius: BorderRadius.circular(16),
