@@ -4,10 +4,10 @@ class PortfolioData {
   static const String title = 'Software Engineer';
   static const String tagline = 'Flutter Developer & Full-Stack Engineer';
   static const String email = 'vipindev113@gmail.com';
-  static const String location = 'Karunagappally, Kollam, Kerala';
+  static const String location = 'Karunagappally, Kollam, Kerala, India';
   static const String linkedIn =
       'https://www.linkedin.com/in/vipindev-p-aa990a195';
-  static const String github = 'https://github.com/vipindev';
+  static const String github = 'https://github.com/vipindev331?tab=repositories';
 
   // ── Summary ───────────────────────────────────────────────────────────────
   static const String summary =
@@ -21,7 +21,7 @@ class PortfolioData {
 
   // ── Stats ─────────────────────────────────────────────────────────────────
   static const List<Map<String, String>> stats = [
-    {'value': '1.9+', 'label': 'Years Experience'},
+    {'value': '2+', 'label': 'Experience'},
     {'value': '4+', 'label': 'Projects'},
     {'value': '3', 'label': 'Platforms'},
     {'value': '12+', 'label': 'Technologies'},
@@ -41,7 +41,7 @@ class PortfolioData {
         'Designing intuitive UI/UX workflows using Figma.',
         'Managing backend services, REST APIs, and third-party library integrations.',
         'Used async/await and isolates to handle background tasks without blocking UI.',
-        'Integrated Google Sign-In, charts, OTP verification, Google Maps, Flutter Map, marker clustering, Firebase, AWS S3, Vector Search, and map directions.',
+        'Integrated Google Sign-In, charts, OTP verification, Google Maps, Flutter Map, marker clustering, Firebase, AWS S3, Vector Search, map directions, etc.',
         'Conducting thorough testing to optimize performance and ensure application reliability.',
         'Using Git for source code management, branching strategies, code reviews, and team collaboration.',
       ],
@@ -83,16 +83,19 @@ class PortfolioData {
       'icon': 'plug',
       'skills': [
         'Google Maps',
+        'FlutterMap',
         'Google Sign-In',
         'OTP Auth',
         'Dio/HTTP',
         'Vector Search',
+        'Charts',
+        'Google Cloud Console'
       ],
     },
     {
       'category': 'Tools & Platforms',
       'icon': 'tools',
-      'skills': ['VS Code', 'Android Studio', 'Figma', 'Postman', 'Git'],
+      'skills': ['VS Code', 'Android Studio','Xcode' 'Figma', 'Postman', 'Git', 'GitHub Desktop'],
     },
     {
       'category': 'AI Tools',
@@ -117,7 +120,7 @@ class PortfolioData {
       'title': 'Cross-Platform Research App',
       'description':
           'A full-featured Flutter application deployed on Android, iOS, and Web for Amrita University\'s research center. Features real-time data, Google Maps integration with marker clustering, and Firebase backend.',
-      'tech': ['Flutter', 'Firebase', 'Google Maps', 'Dart'],
+      'tech': ['Flutter', 'Firebase', 'Google Maps', 'Dart','AWS S3', 'NodeJS'],
       'type': 'Mobile & Web',
       'github': '',
       'demo': '',
@@ -126,7 +129,7 @@ class PortfolioData {
       'title': 'Location Tracking & Navigation',
       'description':
           'Advanced map-based application with Flutter Map, marker clustering, map directions, and vector search capabilities. Built for high-performance geospatial data visualization.',
-      'tech': ['Flutter', 'Flutter Map', 'AWS S3', 'REST API'],
+      'tech': ['Flutter', 'Flutter Map', 'REST API'],
       'type': 'Mobile',
       'github': '',
       'demo': '',
@@ -135,7 +138,7 @@ class PortfolioData {
       'title': 'Auth & OTP Verification System',
       'description':
           'Secure authentication module with Google Sign-In, OTP verification, and Firebase Auth. Implements isolates for background token refresh without blocking the UI thread.',
-      'tech': ['Flutter', 'Firebase Auth', 'Google Sign-In', 'Dart'],
+      'tech': ['Flutter', 'OTP Auth', 'Google Sign-In', 'Dart'],
       'type': 'Mobile',
       'github': '',
       'demo': '',
@@ -144,7 +147,7 @@ class PortfolioData {
       'title': 'Analytics Dashboard',
       'description':
           'Interactive data dashboard with charts, real-time updates, and responsive layouts. Built with Flutter Web for desktop and mobile browsers with adaptive UI.',
-      'tech': ['Flutter Web', 'Charts', 'Firebase'],
+      'tech': ['Flutter Web', 'Charts', 'Firebase', 'FlutterMap', 'Marker Clustering'],
       'type': 'Web',
       'github': '',
       'demo': '',
