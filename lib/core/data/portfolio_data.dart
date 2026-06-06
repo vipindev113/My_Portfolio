@@ -11,7 +11,7 @@ class PortfolioData {
 
   // ── Summary ───────────────────────────────────────────────────────────────
   static const String summary =
-      'Passionate and results-driven Full-Stack Software Developer with 1.9+ years of '
+      'Passionate and results-driven Full-Stack Software Developer with 2.4+ years of '
       'experience in cross-platform mobile application development using Flutter, NodeJS, '
       'and Python. Expert in building seamless, responsive, and user-centric applications '
       'across both frontend and backend environments. Adept at leveraging AI-assisted '
@@ -21,9 +21,9 @@ class PortfolioData {
 
   // ── Stats ─────────────────────────────────────────────────────────────────
   static const List<Map<String, String>> stats = [
-    {'value': '2+', 'label': 'Experience'},
+    {'value': '2.4+', 'label': 'Experience'},
     {'value': '4+', 'label': 'Projects'},
-    {'value': '3', 'label': 'Platforms'},
+    {'value': '4', 'label': 'Platforms'},
     {'value': '12+', 'label': 'Technologies'},
   ];
 

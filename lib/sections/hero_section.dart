@@ -173,8 +173,8 @@ class _HeroContent extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 560),
           child: Text(
-            'Full-Stack Developer specializing in Flutter, scalable backends, and AI-driven workflows. '
-            'I turn complex problems into clean code and exceptional user experiences from end to end',
+           'Full-Stack Developer specializing in Flutter, scalable backends, and AI-assisted development workflows. ' 
+           'I turn complex problems into clean code and exceptional user experiences, delivering end-to-end solutions from concept to deployment.',
             textAlign: textAlign,
             style: AppTextStyles.body,
           ),
