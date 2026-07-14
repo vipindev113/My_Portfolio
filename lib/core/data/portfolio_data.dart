@@ -163,6 +163,51 @@ class PortfolioData {
     },
   ];
 
+  // ── Personal Projects ─────────────────────────────────────────────────────
+  static const List<Map<String, dynamic>> personalProjects = [
+    {
+      'name': 'AcadPlex',
+      'subtitle': 'Multi-Tenant Academic Management Platform',
+      'tech': [
+        'Flutter',
+        'Dart',
+        'Django REST Framework',
+        'Django Channels (WebSockets)',
+        'PostgreSQL',
+        'Firebase',
+      ],
+      'description':
+          'Developed a multi-tenant SaaS academic management platform that helps students build a stronger academic journey and improve career opportunities through centralized management of academics, communication, attendance, examinations, fees, and performance tracking.',
+      'points': [
+        'Designed a multi-tenant system that identifies the user\'s institution at login and restricts access to that institution\'s data only.',
+        'Built 12+ integrated modules, including student enrollment, bulk academic promotion, attendance management, exam scheduling, result publishing, offline fee management, announcements, and reporting dashboards.',
+        'Engineered real-time synchronization using Django Channels (WebSockets), implemented role-based access control (RBAC) for five roles (Super Admin, Director, Staff, Parent, Student), and secured APIs with institution-scoped token authentication.',
+        'Integrated Firebase Cloud Messaging (FCM) for push notifications, Google Sign-In, and live GPS tracking to enhance communication, onboarding, and location-aware features.',
+        'Strengthened platform security with audit logging, reversible credential encryption, and institute lifecycle management, delivering a cross-platform Flutter application for Android, iOS, and Web.',
+        'Leveraged AI-assisted development tools to accelerate system architecture planning, UI/UX design, and fast code development, improving development efficiency while maintaining production-quality code.',
+      ],
+      'screenshotLabel': 'AcadPlex App Screenshots',
+      'screenshots':
+          'https://drive.google.com/drive/folders/1WOI-KJLqXfkoz-bwW9dlY37OLQPIsZA_?usp=sharing',
+    },
+    {
+      'name': 'NxtCust POS',
+      'subtitle': 'Offline-First Retail Billing & POS System',
+      'tech': ['Flutter', 'Dart', 'Node.js', 'Express.js', 'SQLite'],
+      'description':
+          'Built an offline-first, cross-platform Retail Billing & POS system using a single Flutter codebase for Android, iOS, Web, and Desktop, backed by a Node.js + Express.js + SQLite server.',
+      'points': [
+        'Designed an offline-first data architecture where sales and inventory transactions are saved locally first and automatically synchronized with the server when connectivity is restored, ensuring uninterrupted billing and data consistency.',
+        'Designed a reliable sync engine that automatically uploads locally stored data when the device reconnects to the internet.',
+        'Developed JWT-based authentication, role-based access control (SuperAdmin, Manager & Staff), barcode scanning (camera and hardware scanners), ESC/POS thermal receipt printing, and audit logging.',
+        'Leveraged AI-assisted development tools to accelerate system architecture planning, UI/UX design, and fast code development, improving development efficiency while maintaining production-quality code.',
+      ],
+      'screenshotLabel': 'NxtCust POS App Screenshots',
+      'screenshots':
+          'https://drive.google.com/drive/folders/1uwYml_XZuYlr7_QxvyneNe6h-wkElznp?usp=sharing',
+    },
+  ];
+
   // ── Education ─────────────────────────────────────────────────────────────
   static const List<Map<String, String>> education = [
     {

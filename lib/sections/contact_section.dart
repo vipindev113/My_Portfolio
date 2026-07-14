@@ -33,7 +33,7 @@ class ContactSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SectionTitle(label: '06. Contact', title: "Let's Connect"),
+          const SectionTitle(label: '07. Contact', title: "Let's Connect"),
           isMobile
               ? _MobileContact()
               : Row(

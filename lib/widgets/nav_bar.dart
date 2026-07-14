@@ -26,6 +26,7 @@ class _NavBarState extends State<NavBar> {
     'Skills',
     'Experience',
     'Projects',
+    'Personal',
     'Contact',
   ];
 

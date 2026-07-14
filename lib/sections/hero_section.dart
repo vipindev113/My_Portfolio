@@ -144,13 +144,6 @@ class _HeroContent extends StatelessWidget {
             repeatForever: true,
             animatedTexts: [
               TypewriterAnimatedText(
-                'Flutter Developer',
-                textStyle: isMobile
-                    ? AppTextStyles.heroTaglineMobile
-                    : AppTextStyles.heroTagline,
-                speed: const Duration(milliseconds: 80),
-              ),
-              TypewriterAnimatedText(
                 'Full-Stack Engineer',
                 textStyle: isMobile
                     ? AppTextStyles.heroTaglineMobile
@@ -158,7 +151,21 @@ class _HeroContent extends StatelessWidget {
                 speed: const Duration(milliseconds: 80),
               ),
               TypewriterAnimatedText(
+                'Flutter Developer',
+                textStyle: isMobile
+                    ? AppTextStyles.heroTaglineMobile
+                    : AppTextStyles.heroTagline,
+                speed: const Duration(milliseconds: 80),
+              ),
+              TypewriterAnimatedText(
                 'Mobile Application Engineer',
+                textStyle: isMobile
+                    ? AppTextStyles.heroTaglineMobile
+                    : AppTextStyles.heroTagline,
+                speed: const Duration(milliseconds: 80),
+              ),
+              TypewriterAnimatedText(
+                'Software Engineer',
                 textStyle: isMobile
                     ? AppTextStyles.heroTaglineMobile
                     : AppTextStyles.heroTagline,

@@ -25,7 +25,7 @@ class AchievementsSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SectionTitle(
-            label: '05. Achievements',
+            label: '06. Achievements',
             title: 'Certifications & Milestones',
           ),
           _EducationRow(isMobile: isMobile),

@@ -5,6 +5,7 @@ import '../sections/contact_section.dart';
 import '../sections/experience_section.dart';
 import '../sections/footer_section.dart';
 import '../sections/hero_section.dart';
+import '../sections/personal_projects_section.dart';
 import '../sections/projects_section.dart';
 import '../sections/skills_section.dart';
 import '../widgets/nav_bar.dart';
@@ -19,8 +20,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _scrollController = ScrollController();
 
-  // One GlobalKey per nav-linked section: About, Skills, Experience, Projects, Contact
-  final List<GlobalKey> _sectionKeys = List.generate(5, (_) => GlobalKey());
+  // One GlobalKey per nav-linked section: About, Skills, Experience, Projects, Personal, Contact
+  final List<GlobalKey> _sectionKeys = List.generate(6, (_) => GlobalKey());
 
   void _scrollToSection(int index) {
     final key = _sectionKeys[index];
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   HeroSection(
                     onViewWork: () => _scrollToSection(2), // Projects
-                    onContact: () => _scrollToSection(4),  // Contact
+                    onContact: () => _scrollToSection(5),  // Contact
                   ),
                   KeyedSubtree(
                     key: _sectionKeys[0],
@@ -76,9 +77,13 @@ class _HomePageState extends State<HomePage> {
                     key: _sectionKeys[3],
                     child: const ProjectsSection(),
                   ),
-                  const AchievementsSection(),
                   KeyedSubtree(
                     key: _sectionKeys[4],
+                    child: const PersonalProjectsSection(),
+                  ),
+                  const AchievementsSection(),
+                  KeyedSubtree(
+                    key: _sectionKeys[5],
                     child: const ContactSection(),
                   ),
                   const FooterSection(),

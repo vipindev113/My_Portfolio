@@ -56,7 +56,7 @@ class _ProjectsGrid extends StatelessWidget {
               delay: Duration(milliseconds: 100 * i),
               child: SizedBox(
                 width: cardWidth,
-                height: 320,
+                height: 380,
                 child: _ProjectCard(project: PortfolioData.projects[i]),
               ),
             );
@@ -179,12 +179,15 @@ class _ProjectCardState extends State<_ProjectCard> {
             ),
             const SizedBox(height: 8),
 
-            // Description
-            Text(
-              widget.project['description'] as String,
-              style: AppTextStyles.bodySmall,
-              maxLines: 4,
-              overflow: TextOverflow.ellipsis,
+            // Description — flexes to fill remaining height so the fixed-height
+            // card never overflows when tech chips wrap to multiple lines.
+            Expanded(
+              child: Text(
+                widget.project['description'] as String,
+                style: AppTextStyles.bodySmall,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 8,
+              ),
             ),
             const SizedBox(height: 16),
 
