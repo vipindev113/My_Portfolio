@@ -100,7 +100,7 @@ class PortfolioData {
     {
       'category': 'AI Tools',
       'icon': 'ai',
-      'skills': ['Claude AI', 'Cursor AI', 'Vibe Coding'],
+      'skills': ['Claude AI', 'Google Gemini', 'Google Stitch', 'Claude Design'],
     },
     {
       'category': 'Soft Skills',
