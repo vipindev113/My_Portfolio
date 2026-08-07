@@ -1,11 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "Vipindev P — Software Developer",
+    "short_name": "Vipindev P",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#080D1A",
+    "theme_color": "#080D1A",
+    "description": "Portfolio of Vipindev P — Software Developer specializing in Flutter, Node.js, Python, and AI-driven development.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

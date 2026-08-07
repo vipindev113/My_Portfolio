@@ -79,6 +79,7 @@ class _PersonalProjectCardState extends State<_PersonalProjectCard> {
     final points = widget.data['points'] as List;
     final screenshots = widget.data['screenshots'] as String;
     final screenshotLabel = widget.data['screenshotLabel'] as String;
+    final github = widget.data['github'] as String? ?? '';
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
@@ -209,11 +210,22 @@ class _PersonalProjectCardState extends State<_PersonalProjectCard> {
               ),
             ),
 
+            // Repository link
+            if (github.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              _CardLink(
+                icon: FontAwesomeIcons.github,
+                label: github.replaceFirst('https://', ''),
+                onTap: () => _launch(github),
+              ),
+            ],
+
             // Screenshots link
             if (screenshotLabel.isNotEmpty) ...[
-              const SizedBox(height: 8),
-              _ScreenshotLink(
-                label: screenshotLabel,
+              const SizedBox(height: 10),
+              _CardLink(
+                icon: FontAwesomeIcons.images,
+                label: 'Screenshots: $screenshotLabel',
                 onTap: screenshots.isEmpty ? null : () => _launch(screenshots),
               ),
             ],
@@ -224,16 +236,17 @@ class _PersonalProjectCardState extends State<_PersonalProjectCard> {
   }
 }
 
-class _ScreenshotLink extends StatefulWidget {
+class _CardLink extends StatefulWidget {
+  final IconData icon;
   final String label;
   final VoidCallback? onTap;
-  const _ScreenshotLink({required this.label, this.onTap});
+  const _CardLink({required this.icon, required this.label, this.onTap});
 
   @override
-  State<_ScreenshotLink> createState() => _ScreenshotLinkState();
+  State<_CardLink> createState() => _CardLinkState();
 }
 
-class _ScreenshotLinkState extends State<_ScreenshotLink> {
+class _CardLinkState extends State<_CardLink> {
   bool _hovered = false;
 
   @override
@@ -252,11 +265,11 @@ class _ScreenshotLinkState extends State<_ScreenshotLink> {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            FaIcon(FontAwesomeIcons.images, size: 14, color: color),
+            FaIcon(widget.icon, size: 14, color: color),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                'Screenshots: ${widget.label}',
+                widget.label,
                 style: AppTextStyles.bodySmall.copyWith(
                   color: color,
                   fontWeight: FontWeight.w500,

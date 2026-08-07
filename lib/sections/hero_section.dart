@@ -143,34 +143,14 @@ class _HeroContent extends StatelessWidget {
           child: AnimatedTextKit(
             repeatForever: true,
             animatedTexts: [
-              TypewriterAnimatedText(
-                'Full-Stack Engineer',
-                textStyle: isMobile
-                    ? AppTextStyles.heroTaglineMobile
-                    : AppTextStyles.heroTagline,
-                speed: const Duration(milliseconds: 80),
-              ),
-              TypewriterAnimatedText(
-                'Flutter Developer',
-                textStyle: isMobile
-                    ? AppTextStyles.heroTaglineMobile
-                    : AppTextStyles.heroTagline,
-                speed: const Duration(milliseconds: 80),
-              ),
-              TypewriterAnimatedText(
-                'Mobile Application Engineer',
-                textStyle: isMobile
-                    ? AppTextStyles.heroTaglineMobile
-                    : AppTextStyles.heroTagline,
-                speed: const Duration(milliseconds: 80),
-              ),
-              TypewriterAnimatedText(
-                'Software Engineer',
-                textStyle: isMobile
-                    ? AppTextStyles.heroTaglineMobile
-                    : AppTextStyles.heroTagline,
-                speed: const Duration(milliseconds: 80),
-              ),
+              for (final role in PortfolioData.heroRoles)
+                TypewriterAnimatedText(
+                  role,
+                  textStyle: isMobile
+                      ? AppTextStyles.heroTaglineMobile
+                      : AppTextStyles.heroTagline,
+                  speed: const Duration(milliseconds: 80),
+                ),
             ],
           ),
         ).animate().fadeIn(delay: 600.ms, duration: 600.ms),
@@ -180,8 +160,7 @@ class _HeroContent extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 560),
           child: Text(
-           'Full-Stack Developer specializing in Flutter, scalable backends, and AI-assisted development workflows. ' 
-           'I turn complex problems into clean code and exceptional user experiences, delivering end-to-end solutions from concept to deployment.',
+            PortfolioData.heroIntro,
             textAlign: textAlign,
             style: AppTextStyles.body,
           ),
