@@ -55,7 +55,7 @@ class _SkillsGrid extends StatelessWidget {
               delay: Duration(milliseconds: 100 * i),
               child: SizedBox(
                 width: cardWidth,
-                height: 280,
+                height: 320,
                 child: _SkillCard(category: cat),
               ),
             );
@@ -91,6 +91,12 @@ class _SkillCardState extends State<_SkillCard> {
         return FontAwesomeIcons.screwdriverWrench;
       case 'ai':
         return FontAwesomeIcons.robot;
+      case 'voice':
+        return FontAwesomeIcons.microphone;
+      case 'lock':
+        return FontAwesomeIcons.lock;
+      case 'barcode':
+        return FontAwesomeIcons.barcode;
       case 'branch':
         return FontAwesomeIcons.codeBranch;
       case 'person':

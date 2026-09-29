@@ -12,22 +12,23 @@ class PortfolioData {
 
   // ── Summary ───────────────────────────────────────────────────────────────
   static const String summary =
-      'Software Developer with 2.4+ years of experience building cross-platform '
-      'mobile and web applications using Flutter, Dart, and NodeJS. Quick to learn '
-      'and adapt to new technologies, with strong proficiency in AI-driven development '
-      'and the ability to leverage AI tools and frameworks for software planning, '
-      'system architecture design, implementation, debugging, and code generation. '
-      'Hands-on experience building full-stack personal projects with Django — '
-      'covering backend development, database design, API integration, and '
-      'authentication workflows — while maintaining production-quality, '
-      'maintainable software.';
+      'Results-driven Software Developer with 4 years of software development '
+      'experience, including 2+ years specializing in Flutter and Dart, building '
+      'cross-platform mobile, web, and desktop applications with backends. '
+      'Experienced in integrating AI services (Gemini AI, Sarvam AI) into '
+      'production applications, and adept at using AI-assisted development tools '
+      'such as Claude Code and Cursor to accelerate architecture planning, '
+      'implementation, and debugging while delivering maintainable, '
+      'production-quality software. A quick learner who adapts rapidly to new '
+      'technologies and collaborates effectively in Agile teams.';
 
   // Short intro used on the hero section.
   static const String heroIntro =
-      'Software Developer specializing in Flutter, scalable backends, and AI-driven '
-      'development workflows. I turn complex problems into clean, maintainable code '
-      'and exceptional user experiences — delivering end-to-end solutions from '
-      'concept to deployment.';
+      'Software Developer with 4 years of experience, including 2+ years '
+      'specializing in Flutter. I build cross-platform mobile, web, and desktop '
+      'applications, integrate AI services like Gemini and Sarvam AI, and use '
+      'AI-assisted tools such as Claude Code to deliver clean, production-quality '
+      'software — from concept to deployment.';
 
   // Roles cycled through the animated hero tagline.
   static const List<String> heroRoles = [
@@ -39,7 +40,7 @@ class PortfolioData {
 
   // ── Stats ─────────────────────────────────────────────────────────────────
   static const List<Map<String, String>> stats = [
-    {'value': '2.4+', 'label': 'Experience'},
+    {'value': '4+', 'label': 'Experience'},
     {'value': '7+', 'label': 'Projects'},
     {'value': '4', 'label': 'Platforms'},
     {'value': '20+', 'label': 'Technologies'},
@@ -48,19 +49,20 @@ class PortfolioData {
   // ── Experience ────────────────────────────────────────────────────────────
   static const List<Map<String, dynamic>> experience = [
     {
-      'role': 'Project Assistant I',
+      'role': 'Project Assistant',
       'company': 'Amrita Center for Wireless Networks and Applications',
       'location': 'Kollam',
       'period': 'May 2024 – Present',
       'current': true,
       'responsibilities': [
-        'Developed and maintained cross-platform applications for Android, iOS, Web, and Desktop using Flutter, implementing efficient state management and responsive user interfaces.',
-        'Designed responsive, high-performance user interfaces using Flutter and AI-assisted design tools (Claude Design and Google Stitch), following Material Design principles and modern UI/UX best practices.',
-        'Built backend services and REST APIs; integrated third-party services including Google Sign-In, OTP authentication, Google Maps, marker clustering, Firebase, and AWS S3.',
-        'Developed AI-powered voice-based features using Sarvam AI and Gemini AI — multilingual speech recognition, AI-driven translation, and intelligent form auto-filling — enabling seamless voice-operated workflows.',
-        'Optimized application performance using asynchronous programming (async/await), isolates, and efficient state management.',
-        'Used Git for version control, branching strategies, code reviews, and collaborative development in an Agile workflow.',
-        'Leveraged AI-assisted development tools including Claude Code (CLI), Cursor AI, Gemini, Google Stitch, and Claude Design to accelerate software architecture, UI prototyping, implementation, debugging, refactoring, and technical documentation while maintaining production-quality code.',
+        'Developed and maintained cross-platform applications for 3 platforms (Android, iOS, and Web) from a single Flutter codebase, implementing efficient state management and responsive user interfaces.',
+        'Published and released the application across all three platforms: Android, iOS, and Web.',
+        'Engineered AI-powered voice features by integrating Sarvam AI and Gemini AI, delivering multilingual speech recognition, AI-driven translation, and intelligent form auto-filling for hands-free, voice-operated workflows.',
+        'Built backend services and REST APIs, and integrated 6 third-party services: Google Sign-In, OTP authentication, Google Maps, marker clustering, Firebase, and AWS S3.',
+        'Optimized application performance using asynchronous programming (async/await), Dart isolates for heavy background processing, and efficient state management.',
+        'Designed intuitive, high-performance interfaces following Material Design principles, using Claude Design and Google Stitch for rapid UI prototyping.',
+        'Collaborated with cross-functional team members in an Agile workflow, applying Git branching strategies and participating in code reviews.',
+        'Leveraged AI-assisted development tools (Claude Code, Cursor AI, Gemini, Google Stitch, Claude Design) to accelerate software architecture, implementation, debugging, refactoring, and technical documentation.',
       ],
     },
     {
@@ -70,9 +72,9 @@ class PortfolioData {
       'period': 'July 2023 – April 2024',
       'current': false,
       'responsibilities': [
-        'Designed and developed web applications using core PHP.',
-        'Managed backend services and database design.',
-        'Conducted testing and debugging to enhance application functionality and stability.',
+        'Designed and developed web applications using core PHP and MySQL for university operations.',
+        'Managed backend services and database administration, ensuring data integrity and system availability.',
+        'Conducted testing and debugging to improve application functionality, stability, and reliability.',
       ],
     },
     {
@@ -132,25 +134,55 @@ class PortfolioData {
       ],
     },
     {
-      'category': 'Cloud & API Services',
+      'category': 'Cloud & API Integration',
       'icon': 'plug',
       'skills': [
         'Firebase',
-        'Google Maps Platform',
-        'Google Sign-In',
-        'OTP Auth',
         'FCM',
-        'Google Cloud Console',
+        'Google Maps Platform',
+        'Marker Clustering',
+        'GPS Tracking',
+        'AWS S3',
+        'Anthropic API',
+        'Gemini AI',
+        'Sarvam AI',
       ],
     },
     {
-      'category': 'AI Tools & Services',
+      'category': 'AI & Voice',
+      'icon': 'voice',
+      'skills': [
+        'Speech Recognition',
+        'Multilingual Translation',
+        'Generative AI Integration',
+        'Prompt Engineering',
+      ],
+    },
+    {
+      'category': 'Security & Authentication',
+      'icon': 'lock',
+      'skills': [
+        'JWT Authentication',
+        'RBAC',
+        'OAuth (Google Sign-In)',
+        'OTP Authentication',
+        'Token-Based Auth',
+        'Audit Logging',
+        'Encryption',
+      ],
+    },
+    {
+      'category': 'Hardware Integration',
+      'icon': 'barcode',
+      'skills': ['Barcode Scanning (Camera & Hardware)', 'ESC/POS Thermal Printing'],
+    },
+    {
+      'category': 'AI-Assisted Development',
       'icon': 'ai',
       'skills': [
         'Claude Code (CLI)',
         'Cursor AI',
         'Gemini AI',
-        'Sarvam AI',
         'Google Stitch',
         'Claude Design',
       ],
@@ -169,13 +201,14 @@ class PortfolioData {
       'category': 'Professional Skills',
       'icon': 'person',
       'skills': [
-        'Quick Learner',
-        'Adaptability',
         'Problem-Solving',
-        'AI-Driven Development',
+        'Analytical Thinking',
+        'Adaptability',
         'Team Collaboration',
-        'Debugging',
         'Communication',
+        'Time Management',
+        'Attention to Detail',
+        'Creativity',
       ],
     },
   ];
