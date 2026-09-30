@@ -302,6 +302,11 @@ class PortfolioData {
       ],
       'github': 'https://github.com/vipindev331/acadplex',
       'screenshotLabel': 'AcadPlex App Screenshots',
+      'images': [
+        'assets/images/acadplex/acadplex_1.png',
+        'assets/images/acadplex/acadplex_2.png',
+        'assets/images/acadplex/acadplex_3.png',
+      ],
       'screenshots':
           'https://drive.google.com/drive/folders/1WOI-KJLqXfkoz-bwW9dlY37OLQPIsZA_?usp=sharing',
     },
@@ -319,6 +324,11 @@ class PortfolioData {
       ],
       'github': 'https://github.com/vipindev331/nxtcust-pos',
       'screenshotLabel': 'NxtCust POS App Screenshots',
+      'images': [
+        'assets/images/nxtcust/nxtcust_1.png',
+        'assets/images/nxtcust/nxtcust_2.png',
+        'assets/images/nxtcust/nxtcust_3.png',
+      ],
       'screenshots':
           'https://drive.google.com/drive/folders/1uwYml_XZuYlr7_QxvyneNe6h-wkElznp?usp=sharing',
     },

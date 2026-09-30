@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:web/web.dart' as web;
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
 import '../core/data/portfolio_data.dart';
@@ -21,6 +23,26 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
+  static const double _nameThreshold = 250;
+  bool _showName = false;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.scrollController.addListener(_onScroll);
+  }
+
+  @override
+  void dispose() {
+    widget.scrollController.removeListener(_onScroll);
+    super.dispose();
+  }
+
+  void _onScroll() {
+    final show = widget.scrollController.offset > _nameThreshold;
+    if (show != _showName) setState(() => _showName = show);
+  }
+
   final List<String> _navItems = [
     'About',
     'Skills',
@@ -48,6 +70,13 @@ class _NavBarState extends State<NavBar> {
     if (await canLaunchUrl(uri)) launchUrl(uri);
   }
 
+  void _downloadResume() {
+    (web.document.createElement('a') as web.HTMLAnchorElement)
+      ..href = 'Vipindev_P_Resume.pdf'
+      ..download = 'Vipindev_P_Resume.pdf'
+      ..click();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
@@ -55,11 +84,15 @@ class _NavBarState extends State<NavBar> {
         navItems: _navItems,
         onTap: _scrollToSection,
         onLinkedIn: _openLinkedIn,
+        onResume: _downloadResume,
+        showName: _showName,
       ),
       desktop: _DesktopNav(
         navItems: _navItems,
         onTap: _scrollToSection,
         onLinkedIn: _openLinkedIn,
+        onResume: _downloadResume,
+        showName: _showName,
       ),
     );
   }
@@ -71,11 +104,15 @@ class _DesktopNav extends StatelessWidget {
   final List<String> navItems;
   final void Function(int) onTap;
   final VoidCallback onLinkedIn;
+  final VoidCallback onResume;
+  final bool showName;
 
   const _DesktopNav({
     required this.navItems,
     required this.onTap,
     required this.onLinkedIn,
+    required this.onResume,
+    required this.showName,
   });
 
   @override
@@ -91,8 +128,7 @@ class _DesktopNav extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Logo
-        
+          _NameLabel(visible: showName),
           const Spacer(),
           // Nav links
           ...List.generate(navItems.length, (i) {
@@ -105,6 +141,8 @@ class _DesktopNav extends StatelessWidget {
             onTap: onLinkedIn,
             tooltip: 'LinkedIn',
           ),
+          const SizedBox(width: 16),
+          _ResumeButton(onTap: onResume),
         ],
       ),
     );
@@ -216,11 +254,15 @@ class _MobileNav extends StatelessWidget {
   final List<String> navItems;
   final void Function(int) onTap;
   final VoidCallback onLinkedIn;
+  final VoidCallback onResume;
+  final bool showName;
 
   const _MobileNav({
     required this.navItems,
     required this.onTap,
     required this.onLinkedIn,
+    required this.onResume,
+    required this.showName,
   });
 
   @override
@@ -236,7 +278,9 @@ class _MobileNav extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Spacer(),
+          Expanded(child: _NameLabel(visible: showName, fontSize: 18)),
+          _ResumeButton(onTap: onResume, compact: true),
+          const SizedBox(width: 8),
           IconButton(
             icon: const Icon(Icons.menu_rounded, color: AppColors.textPrimary),
             onPressed: () => _showDrawer(context),
@@ -260,6 +304,7 @@ class _MobileNav extends StatelessWidget {
           onTap(i);
         },
         onLinkedIn: onLinkedIn,
+        onResume: onResume,
       ),
     );
   }
@@ -269,11 +314,13 @@ class _DrawerContent extends StatelessWidget {
   final List<String> navItems;
   final void Function(int) onTap;
   final VoidCallback onLinkedIn;
+  final VoidCallback onResume;
 
   const _DrawerContent({
     required this.navItems,
     required this.onTap,
     required this.onLinkedIn,
+    required this.onResume,
   });
 
   @override
@@ -316,7 +363,116 @@ class _DrawerContent extends StatelessWidget {
             ),
             title: Text('LinkedIn', style: AppTextStyles.body),
           ),
+          ListTile(
+            onTap: onResume,
+            leading: const Icon(
+              Icons.download_rounded,
+              color: AppColors.accent,
+            ),
+            title: Text('Download Resume', style: AppTextStyles.body),
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class _ResumeButton extends StatefulWidget {
+  final VoidCallback onTap;
+  final bool compact;
+  const _ResumeButton({required this.onTap, this.compact = false});
+
+  @override
+  State<_ResumeButton> createState() => _ResumeButtonState();
+}
+
+class _ResumeButtonState extends State<_ResumeButton> {
+  bool _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: EdgeInsets.symmetric(
+            horizontal: widget.compact ? 12 : 18,
+            vertical: widget.compact ? 8 : 10,
+          ),
+          decoration: BoxDecoration(
+            color: _hovered ? AppColors.accent : Colors.transparent,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: AppColors.accent),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.download_rounded,
+                size: 16,
+                color: _hovered ? Colors.white : AppColors.accent,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'Resume',
+                style: AppTextStyles.navItem.copyWith(
+                  color: _hovered ? Colors.white : AppColors.accent,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _NameLabel extends StatelessWidget {
+  final bool visible;
+  final double fontSize;
+  const _NameLabel({required this.visible, this.fontSize = 24});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedOpacity(
+      opacity: visible ? 1 : 0,
+      duration: const Duration(milliseconds: 300),
+      child: AnimatedSlide(
+        offset: visible ? Offset.zero : const Offset(0, 0.4),
+        duration: const Duration(milliseconds: 300),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/code.png',
+              width: fontSize * 1.8,
+              height: fontSize * 1.8,
+            ),
+            const SizedBox(width: 10),
+            Flexible(
+              child: ShaderMask(
+                shaderCallback: (rect) => const LinearGradient(
+                  colors: [AppColors.textPrimary, AppColors.accent],
+                ).createShader(rect),
+                child: Text(
+                  PortfolioData.name,
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.poppins(
+                    fontSize: fontSize,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.4,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

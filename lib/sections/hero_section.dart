@@ -33,7 +33,7 @@ class HeroSection extends StatelessWidget {
           gradient: RadialGradient(
             center: Alignment(-0.6, -0.4),
             radius: 1.2,
-            colors: [Color(0xFF0D1F3C), AppColors.background],
+            colors: [Color(0xFFCBDCF2), AppColors.background],
           ),
         ),
         child: isMobile

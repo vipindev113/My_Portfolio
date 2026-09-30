@@ -16,13 +16,13 @@ class PortfolioApp extends StatelessWidget {
       title: 'Vipindev P — Software Engineer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.dark(
+        colorScheme: ColorScheme.light(
           primary: AppColors.accent,
           secondary: AppColors.accentSecondary,
           surface: AppColors.surface,
         ),
         scaffoldBackgroundColor: AppColors.background,
-        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+        textTheme: GoogleFonts.interTextTheme(ThemeData.light().textTheme),
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(color: AppColors.textSecondary),
         ),

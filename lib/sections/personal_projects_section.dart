@@ -80,6 +80,7 @@ class _PersonalProjectCardState extends State<_PersonalProjectCard> {
     final screenshots = widget.data['screenshots'] as String;
     final screenshotLabel = widget.data['screenshotLabel'] as String;
     final github = widget.data['github'] as String? ?? '';
+    final images = (widget.data['images'] as List?)?.cast<String>() ?? [];
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
@@ -210,6 +211,12 @@ class _PersonalProjectCardState extends State<_PersonalProjectCard> {
               ),
             ),
 
+            if (images.isNotEmpty) ...[
+              const SizedBox(height: 12),
+              _ScreenshotGallery(images: images, isMobile: widget.isMobile),
+              const SizedBox(height: 20),
+            ],
+
             // Repository link
             if (github.isNotEmpty) ...[
               const SizedBox(height: 8),
@@ -277,6 +284,94 @@ class _CardLinkState extends State<_CardLink> {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+const double _shotAspect = 1419 / 2796;
+
+class _ScreenshotGallery extends StatelessWidget {
+  final List<String> images;
+  final bool isMobile;
+  const _ScreenshotGallery({required this.images, required this.isMobile});
+
+  void _open(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (_) => Dialog(
+        backgroundColor: Colors.transparent,
+        insetPadding: const EdgeInsets.all(16),
+        child: Stack(
+          alignment: Alignment.topRight,
+          children: [
+            InteractiveViewer(
+              child: Center(child: Image.asset(images[index])),
+            ),
+            IconButton(
+              onPressed: () => Navigator.of(context).pop(),
+              icon: const Icon(Icons.close, color: Colors.white),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _shot(BuildContext context, int i) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () => _open(context, i),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(14),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              border: Border.all(color: AppColors.cardBorder),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Image.asset(images[i], fit: BoxFit.cover),
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (isMobile) {
+      // Swipeable horizontal strip on phones.
+      const height = 360.0;
+      return SizedBox(
+        height: height,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: images.length,
+          separatorBuilder: (_, _) => const SizedBox(width: 12),
+          itemBuilder: (ctx, i) => AspectRatio(
+            aspectRatio: _shotAspect,
+            child: _shot(ctx, i),
+          ),
+        ),
+      );
+    }
+    // Desktop/tablet: equal-width row, capped so phones don't get huge.
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 660),
+        child: Row(
+          children: [
+            for (int i = 0; i < images.length; i++) ...[
+              Expanded(
+                child: AspectRatio(
+                  aspectRatio: _shotAspect,
+                  child: _shot(context, i),
+                ),
+              ),
+              if (i < images.length - 1) const SizedBox(width: 16),
+            ],
           ],
         ),
       ),
