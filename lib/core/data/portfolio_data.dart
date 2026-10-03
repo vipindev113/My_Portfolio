@@ -5,21 +5,21 @@ class PortfolioData {
   static const String tagline =
       'Flutter · Node.js · Python · AI-Driven Development';
   static const String email = 'vipindev113@gmail.com';
-  static const String location = 'Karunagappally, Kollam, Kerala, India';
+  static const String location = 'Kollam, Kerala, India';
   static const String linkedIn =
       'https://www.linkedin.com/in/vipindev-p-aa990a195';
   static const String github = 'https://github.com/vipindev331';
 
   // ── Summary ───────────────────────────────────────────────────────────────
   static const String summary =
-      'Results-driven Software Developer with 4 years of software development '
-      'experience, including 2+ years specializing in Flutter and Dart, building '
-      'cross-platform mobile, web, and desktop applications with backends. '
-      'Experienced in integrating AI services (Gemini AI, Sarvam AI) into '
-      'production applications, and adept at using AI-assisted development tools '
-      'such as Claude Code and Cursor to accelerate architecture planning, '
-      'implementation, and debugging while delivering maintainable, '
-      'production-quality software. A quick learner who adapts rapidly to new '
+      'Results-driven Software Developer with 2+ years of specialized experience '
+      'in Flutter and Dart, building cross-platform mobile, web, and desktop '
+      'applications with backend integrations. Overall, 4 years of software '
+      'development experience, with hands-on expertise in integrating AI '
+      'services such as Gemini AI and Sarvam AI into applications. Experienced '
+      'in AI-assisted development using tools such as Claude Code and Cursor '
+      'for architecture planning, implementation, debugging, and '
+      'problem-solving. A quick learner who adapts rapidly to new '
       'technologies and collaborates effectively in Agile teams.';
 
   // Short intro used on the hero section.
@@ -57,8 +57,8 @@ class PortfolioData {
       'responsibilities': [
         'Developed and maintained cross-platform applications for 3 platforms (Android, iOS, and Web) from a single Flutter codebase, implementing efficient state management and responsive user interfaces.',
         'Published and released the application across all three platforms: Android, iOS, and Web.',
-        'Engineered AI-powered voice features by integrating Sarvam AI and Gemini AI, delivering multilingual speech recognition, AI-driven translation, and intelligent form auto-filling for hands-free, voice-operated workflows.',
-        'Built backend services and REST APIs, and integrated 6 third-party services: Google Sign-In, OTP authentication, Google Maps, marker clustering, Firebase, and AWS S3.',
+        'Engineered AI-powered voice features by integrating 2 AI platforms (Sarvam AI and Gemini AI), delivering 3 capabilities: multilingual speech recognition, AI-driven translation, and intelligent form auto-filling for hands-free, voice-operated workflows.',
+        'Built backend services and REST APIs, and integrated third-party services: Google Sign-In, OTP authentication, Google Maps, Flutter Map, marker clustering, Firebase, and AWS S3.',
         'Optimized application performance using asynchronous programming (async/await), Dart isolates for heavy background processing, and efficient state management.',
         'Designed intuitive, high-performance interfaces following Material Design principles, using Claude Design and Google Stitch for rapid UI prototyping.',
         'Collaborated with cross-functional team members in an Agile workflow, applying Git branching strategies and participating in code reviews.',
@@ -85,8 +85,8 @@ class PortfolioData {
       'current': false,
       'responsibilities': [
         'Designed and developed cross-platform mobile applications for Android and iOS using the Ionic framework.',
-        'Managed backend services and REST API integrations.',
-        'Conducted testing and debugging to enhance application functionality and stability.',
+        'Integrated REST APIs and managed backend services supporting mobile clients.',
+        'Conducted testing and debugging to improve application functionality and stability.',
       ],
     },
   ];
