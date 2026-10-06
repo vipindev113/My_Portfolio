@@ -1,7 +1,7 @@
 class PortfolioData {
   // ── Personal ──────────────────────────────────────────────────────────────
   static const String name = 'Vipindev P';
-  static const String title = 'Software Developer';
+  static const String title = 'Full-Stack Developer';
   static const String tagline =
       'Flutter · Node.js · Python · AI-Driven Development';
   static const String email = 'vipindev113@gmail.com';
@@ -12,9 +12,9 @@ class PortfolioData {
 
   // ── Summary ───────────────────────────────────────────────────────────────
   static const String summary =
-      'Results-driven Software Developer with 2+ years of specialized experience '
-      'in Flutter and Dart, building cross-platform mobile, web, and desktop '
-      'applications with backend integrations. Overall, 4 years of software '
+      'Results-driven Full-Stack Developer with 2+ years of specialized experience '
+      'in Flutter, Dart, and Node.js, building cross-platform mobile, web, and '
+      'desktop applications with backend integrations. Overall, 4+ years of software '
       'development experience, with hands-on expertise in integrating AI '
       'services such as Gemini AI and Sarvam AI into applications. Experienced '
       'in AI-assisted development using tools such as Claude Code and Cursor '
@@ -24,24 +24,27 @@ class PortfolioData {
 
   // Short intro used on the hero section.
   static const String heroIntro =
-      'Software Developer with 4 years of experience, including 2+ years '
-      'specializing in Flutter. I build cross-platform mobile, web, and desktop '
-      'applications, integrate AI services like Gemini and Sarvam AI, and use '
-      'AI-assisted tools such as Claude Code to deliver clean, production-quality '
-      'software — from concept to deployment.';
+  'Full-Stack Developer with 2+ years of specialized experience in Flutter '
+  'and Node.js, and 4+ years of overall software development experience. '
+  'I build cross-platform mobile, web, and desktop applications, along with '
+  'the Node.js backends and REST APIs behind them. I integrate AI services '
+  'like Gemini and Sarvam AI and have hands-on experience in AI-assisted '
+  'development using tools such as Claude Code and Cursor to deliver clean, '
+  'production-quality software — from concept to deployment.';
+
 
   // Roles cycled through the animated hero tagline.
   static const List<String> heroRoles = [
-    'Software Developer',
+    'Full-Stack Developer',
     'Flutter Developer',
-    'Full-Stack Engineer',
+    'Node.js Developer',
     'AI-Driven Developer',
   ];
 
   // ── Stats ─────────────────────────────────────────────────────────────────
   static const List<Map<String, String>> stats = [
-    {'value': '4+', 'label': 'Experience'},
-    {'value': '7+', 'label': 'Projects'},
+    {'value': '2+', 'label': 'Mobile App Experience'},
+    {'value': '5+', 'label': 'Projects'},
     {'value': '4', 'label': 'Platforms'},
     {'value': '20+', 'label': 'Technologies'},
   ];
